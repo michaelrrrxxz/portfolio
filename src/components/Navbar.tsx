@@ -30,7 +30,7 @@ const NAV_MENU = [
   },
   {
     name: "About",
-    icon: Bars3Icon, // Note: For 'About' you might want a different icon if it's not a generic menu.
+    icon: Bars3Icon,
     href: "#",
   },
 ];
@@ -39,7 +39,7 @@ const NAV_MENU = [
 interface NavItemProps {
   children: React.ReactNode;
   href?: string;
-  className?: string; // Add className for styling flexibility
+  className?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 function NavItem({ children, href, className, onClick }: NavItemProps) {
@@ -58,12 +58,11 @@ function NavItem({ children, href, className, onClick }: NavItemProps) {
   );
 }
 
-
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="w-full border-b">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-white backdrop-blur-md shadow-sm">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         {/* Logo/Brand Name */}
         <a href="#" className="text-lg font-bold">
@@ -84,7 +83,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Navigation (Sheet) */}
+        {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon">
@@ -99,7 +98,7 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className="text-lg"
-                  onClick={() => setIsOpen(false)} // Close sheet on item click
+                  onClick={() => setIsOpen(false)}
                 >
                   <div className="flex items-center gap-3">
                     <item.icon className="h-5 w-5" />

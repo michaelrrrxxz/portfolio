@@ -1,19 +1,25 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Photo from "./../assets/image.png";
 
-import Photo from './../assets/image.png'
 export default function Hero() {
-  return (
- <section className="min-h-[80vh] px-6 py-10 lg:py-16 flex items-center bg-white">
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
+  return (
+    <section className="min-h-[80vh] px-6 py-10 lg:py-16 flex items-center bg-white">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Text Content */}
-        <div>
+        <div data-aos="fade-right">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Welcome to my Web Development Portfolio!
           </h1>
           <p className="text-gray-600 text-lg mb-4">
             I'm Michael Angelo Mangaoang, a passionate web developer based in the Philippines.
             <br />
-            This is where I share my journey in web development, combining creativity and function
+            This is where I share my journey in web development, combining creativity and function.
           </p>
           <label
             htmlFor="email"
@@ -33,9 +39,9 @@ export default function Hero() {
         </div>
 
         {/* Right Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center" data-aos="fade-left">
           <img
-            src={Photo} 
+            src={Photo}
             alt="Profile"
             className="rounded-xl object-cover w-[400px] h-[400px]"
           />

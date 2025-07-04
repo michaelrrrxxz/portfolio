@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { SkillCard } from "./../components/skill-card";
 import {
   CodeBracketIcon,
@@ -50,23 +54,32 @@ const SKILLS = [
 ];
 
 export function Skills() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <section className="px-8 py-16 bg-white">
-      <div className="container mx-auto mb-20 text-center max-w-4xl">
+      <div
+        className="container mx-auto mb-20 text-center max-w-4xl"
+        data-aos="fade-up"
+      >
         <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
           My Skills
         </p>
         <h2 className="text-4xl font-bold text-gray-900 mb-4">What I Do</h2>
         <p className="text-gray-600 text-base leading-relaxed">
-        I design websites that are both creative and useful. Find out below how I can support your goals.
+          I design websites that are both creative and useful. Find out below how I can support your goals.
         </p>
       </div>
 
-    <div className="container mx-auto grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-2 lg:grid-cols-3">
-    {SKILLS.map((props, idx) => (
-        <SkillCard key={idx} {...props} />
-    ))}
-    </div>
+      <div className="container mx-auto grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-2 lg:grid-cols-3">
+        {SKILLS.map((props, idx) => (
+          <div key={idx} data-aos="zoom-in-up" data-aos-delay={idx * 100}>
+            <SkillCard {...props} />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
