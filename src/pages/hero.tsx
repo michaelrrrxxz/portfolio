@@ -9,7 +9,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-[80vh] px-6 py-10 lg:py-16 flex items-center bg-white">
+<section className="min-h-[80vh] mt-10 px-6 py-10 lg:py-16 flex items-center bg-white">
+
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Text Content */}
         <div data-aos="fade-right">
@@ -27,15 +28,15 @@ export default function Hero() {
           >
             Your email
           </label>
-          <input
+          {/* <input
             type="email"
             id="email"
             placeholder="Enter your email"
             className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-gray-200"
-          />
-          <p className="mt-2 text-xs text-gray-500">
+          /> */}
+          {/* <p className="mt-2 text-xs text-gray-500">
             Read my <a href="#" className="underline">Terms and Conditions</a>
-          </p>
+          </p> */}
         </div>
 
         {/* Right Image */}

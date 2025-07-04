@@ -2,7 +2,9 @@ import Hero from './hero';
 import About from './about';
 import Skills from './skills';
 import Stacks from './stacks';
-import { Navbar } from '../components/Navbar';
+import Blog from './blog';
+import Navbar  from '../components/Navbar';
+import Footer from '../components/Footer';
 
 
 
@@ -15,6 +17,8 @@ export default function Main() {
     <Skills></Skills>
     <Stacks></Stacks>
     <About></About>
+    <Blog></Blog>
+    <Footer></Footer>
    
     </>
     );

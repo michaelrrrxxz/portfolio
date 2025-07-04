@@ -2,7 +2,8 @@
 
 import React from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
-import { Github, Facebook } from "lucide-react";
+import { NAV_MENU } from "@/constants/nav-menu";
+
 import {
   Sheet,
   SheetContent,
@@ -16,39 +17,23 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 
-// Define your navigation menu items
-const NAV_MENU = [
-  {
-    name: "Github",
-    icon: Github,
-    href: "https://github.com/michaelrrrxxz",
-  },
-  {
-    name: "Facebook",
-    icon: Facebook,
-    href: "https://www.facebook.com/michaelmanagaoangfb",
-  },
-  {
-    name: "About",
-    icon: Bars3Icon,
-    href: "#",
-  },
-];
-
-// Helper component for navigation items
 interface NavItemProps {
   children: React.ReactNode;
   href?: string;
   className?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
+
 function NavItem({ children, href, className, onClick }: NavItemProps) {
+  const isExternal = href?.startsWith("http");
   return (
     <NavigationMenuItem>
       <NavigationMenuLink asChild>
         <a
           href={href}
-          className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${className ?? ""}`}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className={`block select-none space-y-1 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${className ?? ""}`}
           onClick={onClick}
         >
           {children}
@@ -58,18 +43,19 @@ function NavItem({ children, href, className, onClick }: NavItemProps) {
   );
 }
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
-
+export default function Navbar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-white backdrop-blur-md shadow-sm">
-      <div className="container mx-auto flex h-14 items-center justify-between px-4">
-        {/* Logo/Brand Name */}
-        <a href="#" className="text-lg font-bold">
-          MyBrand
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-0"
+        aria-label="Global"
+      >
+        {/* Brand */}
+        <a href="#" className="text-lg font-bold tracking-tight">
+          MichaelAngelo.Dev
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             {NAV_MENU.map((item) => (
@@ -83,33 +69,36 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Navigation */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        {/* Mobile – Hamburger */}
+        <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" aria-label="Open menu">
               <Bars3Icon className="h-6 w-6" />
-              <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
+
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-4 pt-6">
               {NAV_MENU.map((item) => (
-                <NavItem
+                <a
                   key={item.name}
                   href={item.href}
-                  className="text-lg"
-                  onClick={() => setIsOpen(false)}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="flex items-center gap-3 rounded-md px-4 py-2 text-lg hover:bg-accent hover:text-accent-foreground"
                 >
-                  <div className="flex items-center gap-3">
-                    <item.icon className="h-5 w-5" />
-                    {item.name}
-                  </div>
-                </NavItem>
+                  <item.icon className="h-5 w-5" />
+                  {item.name}
+                </a>
               ))}
             </nav>
           </SheetContent>
         </Sheet>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }
