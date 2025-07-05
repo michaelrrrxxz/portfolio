@@ -1,9 +1,8 @@
 "use client";
 
-
-import { Github, Facebook } from "lucide-react";
-
-
+import { Github, Facebook, ChevronUp } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const SOCIAL = [
   {
@@ -18,13 +17,39 @@ const SOCIAL = [
   },
 ];
 
-
 export default function Footer() {
+  const [showArrow, setShowArrow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowArrow(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="mt-24 border-t bg-muted/40">
+    <footer className="mt-24 border-t bg-muted/40 relative">
+      {showArrow && (
+        <Button
+          onClick={scrollToTop}
+          variant="default"
+          size="icon"
+          className="fixed bottom-8 left-6 z-50 rounded-full bg-black text-white hover:bg-muted transition"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="h-5 w-5" />
+        </Button>
+      )}
+
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-10 md:flex-row md:justify-between">
         <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()}MichaelAngelo.Dev. All rights reserved.
+          © {new Date().getFullYear()} MichaelAngelo.Dev. All rights reserved.
         </p>
 
         <div className="flex gap-6">

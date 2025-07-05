@@ -29,17 +29,17 @@ export default function Hero() {
     },
     {
       name: "Facebook",
-      href: "https://www.facebook.com/michaelmanagaoangfb",
+      href: "https://www.facebook.com/michaelmangaoangfb",
       icon: Facebook,
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/in/michael-angelo-mangaoang", // optional
+      href: "https://www.linkedin.com/in/michael-angelo-mangaoang",
       icon: Linkedin,
     },
     {
       name: "Portfolio",
-      href: "https://your-portfolio-link.com",
+      href: "https://www.michaelangelo-dev.site",
       icon: Globe,
     },
   ];

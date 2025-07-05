@@ -15,6 +15,11 @@ const skills = [
   { name: "Tailwind", level: 30 },
   { name: "JavaScript", level: 40 },
   { name: "Git", level: 90 },
+  { name: "Vue.js", level: 60 },
+  { name: "React.js", level: 10 },
+  { name: "Inertia.js", level: 70 },
+  { name: "MySQL", level: 80 },
+
 ];
 
 export default function Stacks() {
@@ -31,29 +36,30 @@ export default function Stacks() {
         My Skills
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {skills.map((skill, idx) => (
-          <Card
-            key={skill.name}
-            className="border border-black bg-white shadow-md"
-            data-aos="fade-up"
-            data-aos-delay={idx * 100}
-          >
-            <CardContent className="p-4">
-              <div className="flex justify-between mb-2">
-                <span className="text-md font-semibold">{skill.name}</span>
-                <span className="text-sm font-medium">{skill.level}%</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                <div
-                  className="h-full bg-black rounded-full transition-all duration-700 ease-in-out"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-6">
+  {skills.map((skill, idx) => (
+    <Card
+      key={skill.name}
+      className="border border-black bg-white shadow-md"
+      data-aos="fade-up"
+      data-aos-delay={idx * 100}
+    >
+      <CardContent className="p-4">
+        <div className="flex justify-between mb-2">
+          <span className="text-md font-semibold">{skill.name}</span>
+          <span className="text-sm font-medium">{skill.level}%</span>
+        </div>
+        <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+          <div
+            className="h-full bg-black rounded-full transition-all duration-700 ease-in-out"
+            style={{ width: `${skill.level}%` }}
+          />
+        </div>
+      </CardContent>
+    </Card>
+  ))}
+</div>
+
     </div>
   );
 }
