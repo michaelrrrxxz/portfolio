@@ -1,26 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { botResponses } from "@/constants/bot";
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<{ text: string; from: "user" | "bot" }[]>([]);
   const [input, setInput] = useState("");
 
-  const getBotReply = (msg: string) => {
+  const bottomRef = useRef<HTMLDivElement>(null); // Ref for scrolling
+
+  const getBotReply = (msg: string): string => {
     const lower = msg.toLowerCase();
-
-    if (lower.includes("hello")) return "Hello! I'm Michael Angelo, an aspiring IT professional. How can I assist you today?";
-    if (lower.includes("help")) return "Sure, I'm here to help. Are you asking about Laravel, Vue.js, or anything tech-related?";
-    if (lower.includes("skills")) return "I’m skilled in Laravel, Vue.js, Git, and more. Want to know about a specific skill?";
-    if (lower.includes("experience")) return "I completed my OJT at Aljay Agro-Industrial Solutions, Inc. Need more details?";
-    if (lower.includes("education")) return "I'm pursuing a BS in Information Technology at Northeastern College. Want to know more?";
-    if (lower.includes("contact")) return "You can reach me at mmangaoang21@yahoo.com or visit michaelangelo-dev.site";
-
-    return "Sorry, I don't understand. Try asking about my skills, experience, education, or contact info!";
+    for (const entry of botResponses.responses) {
+      if (entry.keywords.some((keyword) => lower.includes(keyword))) {
+        return entry.response;
+      }
+    }
+    return botResponses.default;
   };
 
   const sendMessage = () => {
@@ -33,6 +33,13 @@ export default function Chatbot() {
     }, 500);
     setInput("");
   };
+
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   return (
     <div>
@@ -65,6 +72,7 @@ export default function Chatbot() {
                 </div>
               </div>
             ))}
+            <div ref={bottomRef} />
           </CardContent>
 
           <div className="border-t px-3 py-2 flex items-center gap-2">
