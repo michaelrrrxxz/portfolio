@@ -1,5 +1,5 @@
 import { Github, Facebook } from "lucide-react";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+
 
 export const NAV_MENU = [
   {
@@ -10,11 +10,7 @@ export const NAV_MENU = [
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://www.facebook.com/michaelmanagaoangfb",
+    href: "https://www.facebook.com/michaelmangaoangfb",
   },
-  {
-    name: "About",
-    icon: Bars3Icon,
-    href: "#about",
-  },
+
 ];

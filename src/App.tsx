@@ -1,4 +1,5 @@
 import Main from './pages/main';
+import Chatbot from './components/Chatbot';
 
 function App() {
   
@@ -6,6 +7,7 @@ function App() {
   return(
     <>
     <Main></Main>
+    <Chatbot />
 
     </>
   )
