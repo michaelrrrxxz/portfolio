@@ -3,9 +3,7 @@
 
 import { Github, Facebook } from "lucide-react";
 
-/* ─────────────────────────────────────────
-   Links
-   ───────────────────────────────────────── */
+
 
 const SOCIAL = [
   {
