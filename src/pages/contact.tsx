@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -6,21 +8,51 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
+
+import { toast } from "sonner";
 
 export default function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mblyedkw", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        toast.success("Message sent! I’ll get back to you shortly.");
+      } else {
+        toast.error("Failed to submit. Please try again.");
+      }
+    } catch {
+      toast.error("Network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center py-20 px-4 bg-white">
       <div className="w-full max-w-5xl grid md:grid-cols-2 gap-0">
-        {/* Left Column - Contact Info */}
-        <Card
-          className="rounded-r-none border-r-0 rounded-lg"
-          data-aos="fade-right"
-        >
+        {/* Left Column */}
+        <Card className="rounded-r-none border-r-0 rounded-lg" data-aos="fade-right">
           <CardContent className="p-10 flex flex-col justify-center h-full">
             <CardHeader className="p-0 mb-6">
               <CardTitle className="text-3xl font-medium tracking-tight">CONTACT</CardTitle>
@@ -45,53 +77,74 @@ export default function ContactSection() {
           </CardContent>
         </Card>
 
-        {/* Right Column - Contact Form */}
-        <Card
-          className="rounded-l-none border-l-0 rounded-lg"
-          data-aos="fade-left"
-        >
+        {/* Right Column */}
+        <Card className="rounded-l-none border-l-0 rounded-lg" data-aos="fade-left">
           <CardContent className="p-10 flex items-center justify-center h-full">
-            <form className="w-full space-y-5">
+            <form onSubmit={handleSubmit} className="w-full space-y-5">
               <CardHeader className="p-0 mb-2">
                 <CardTitle className="text-xl">Send a message</CardTitle>
               </CardHeader>
+
+              {/* Honeypot anti-spam field */}
+              <input type="text" name="_gotcha" style={{ display: "none" }} />
+
               <div>
                 <label className="block text-xs font-medium mb-2 uppercase tracking-wider">Full Name</label>
                 <Input
                   type="text"
+                  name="name"
                   placeholder="Your name"
+                  required
                   className="rounded-sm border-black focus-visible:ring-black"
                 />
               </div>
+
               <div>
                 <label className="block text-xs font-medium mb-2 uppercase tracking-wider">Email Address</label>
                 <Input
                   type="email"
+                  name="email"
                   placeholder="Your email"
+                  required
                   className="rounded-sm border-black focus-visible:ring-black"
                 />
               </div>
+
               <div>
                 <label className="block text-xs font-medium mb-2 uppercase tracking-wider">Topic</label>
                 <Input
                   type="text"
+                  name="subject"
                   placeholder="Subject"
+                  required
                   className="rounded-sm border-black focus-visible:ring-black"
                 />
               </div>
+
               <div>
                 <label className="block text-xs font-medium mb-2 uppercase tracking-wider">Message</label>
                 <Textarea
+                  name="message"
                   placeholder="Your message"
                   rows={4}
+                  required
                   className="rounded-sm border-black focus-visible:ring-black"
                 />
               </div>
+
               <Button
                 type="submit"
                 className="w-full rounded-sm uppercase text-xs tracking-wider font-medium"
+                disabled={isSubmitting}
               >
-                Submit
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </form>
           </CardContent>
