@@ -4,7 +4,7 @@ import { useEffect} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { Github, Facebook, Linkedin,Messenger, Globe } from "lucide-react";
+import { Github, Facebook, Linkedin,MessageCircleMore, Globe } from "lucide-react";
 import Photo from "./../assets/image.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,7 +34,7 @@ export default function Hero() {
     },{
 name:"Messenger",
 href:"https://m.me/michaelmangaoangfb?hash=AbbTeEAx59sgJXlR&source=qr_link_share",
-icon: Messenger
+icon: MessageCircleMore
 },
     {
       name: "LinkedIn",
