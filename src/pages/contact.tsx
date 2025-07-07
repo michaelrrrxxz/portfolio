@@ -27,7 +27,7 @@ export default function ContactSection() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
+      const response = await fetch("https://formspree.io/f/mblyedkw", {
         method: "POST",
         body: formData,
         headers: {
@@ -50,7 +50,7 @@ export default function ContactSection() {
 
   return (
     <div className="flex justify-center items-center py-20 px-4 bg-white">
-      <div className="w-full max-w-5xl grid md:grid-cols-2 gap-0">
+      <div className="w-full max-w-5xl grid md:grid-cols-2 gap-x-8 relative">
         {/* Left Column */}
         <Card className="rounded-r-none border-r-0 rounded-lg" data-aos="fade-right">
           <CardContent className="p-10 flex flex-col justify-center h-full">
