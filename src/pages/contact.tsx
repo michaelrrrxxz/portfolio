@@ -27,7 +27,7 @@ export default function ContactSection() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/mblyedkw", {
+      const response = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
         method: "POST",
         body: formData,
         headers: {
