@@ -10,7 +10,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Main() {
-  const [audio] = useState(() => new Audio('/src/assets/audio/otlom.mp3'));
+const [audio] = useState(() => new Audio('/audio/otlom.mp3'));
+
 
   useEffect(() => {
     // Block right-click context menu
