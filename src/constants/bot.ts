@@ -1,9 +1,39 @@
 export const botResponses = {
-  responses: [{
-    keywords:["haha", "lol", "lmao", "rofl", "funny", "joke"],
-    response: "Haha! Glad you found that funny! 😄"
-  },
-  
+  responses: [
+    {
+      keywords: ["1+1", "what is 1 + 1", "one plus one"],
+      response: "1 + 1 equals 2! 🧮",
+    },
+    {
+      keywords: ["2+2", "what is 2 + 2", "two plus two"],
+      response: "That’s 4! Basic math mastery unlocked. 🎓",
+    },
+    {
+      keywords: ["time", "what time is it", "current time"],
+      response: `It's ${new Date().toLocaleTimeString()}. ⏰`,
+    },
+    {
+      keywords: ["date", "today's date", "what day is it"],
+      response: `Today is ${new Date().toLocaleDateString()}. 📅`,
+    },
+    {
+      keywords: ["your age", "how old are you"],
+      response: "I was created in code — forever young! 🧠✨",
+    },
+    {
+      keywords: ["creator", "who made you", "who created you"],
+      response: "I was built by Michael Angelo, a passionate web developer from Santiago City, Philippines.",
+    },
+    {
+      keywords: ["language", "what language", "programming"],
+      response: "I was made using JavaScript, React, and some backend magic!",
+    },
+
+    // ✅ Existing ones
+    {
+      keywords: ["haha", "lol", "lmao", "rofl", "funny", "joke"],
+      response: "Haha! Glad you found that funny! 😄"
+    },
     {
       keywords: ["hello", "hi", "hey"],
       response: "Hello! I'm Michael Angelo, a web developer from Santiago City, Philippines. How can I assist you today?"
