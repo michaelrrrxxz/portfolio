@@ -78,7 +78,7 @@ export default function ContactSection() {
         </Card>
 
         {/* Right Column */}
-        <Card className="rounded-l-none border-l-0 rounded-lg" data-aos="fade-left">
+        <Card className="rounded-l-none  rounded-lg" data-aos="fade-left">
           <CardContent className="p-10 flex items-center justify-center h-full">
             <form onSubmit={handleSubmit} className="w-full space-y-5">
               <CardHeader className="p-0 mb-2">

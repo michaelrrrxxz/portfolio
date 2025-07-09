@@ -9,7 +9,7 @@ interface SkillCardProps {
 
 export function SkillCard({ icon: Icon, title, children }: SkillCardProps) {
   return (
-    <Card className="bg-transparent shadow-none">
+    <Card    className="border border-black bg-white shadow-md">
       <CardContent className="grid justify-center text-center p-6">
         <div className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-full bg-gray-900 p-2.5 text-white shadow">
           <Icon className="h-6 w-6" strokeWidth={2} />

@@ -111,7 +111,7 @@ icon: MessageCircleMore
           <img
             src={Photo}
             alt="Profile"
-            className="rounded-xl object-cover w-[400px] h-[400px]"
+            className="rounded-xl object-cover w-[400px] h-[400px] border border-black bg-white shadow-md"
           />
         </div>
       </div>
