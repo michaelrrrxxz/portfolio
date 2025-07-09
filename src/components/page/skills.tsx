@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { SkillCard } from "./../components/skill-card";
+import { SkillCard } from "../skill-card";
 import {
   CodeBracketIcon,
   ServerStackIcon,

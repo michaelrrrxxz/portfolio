@@ -54,7 +54,7 @@ export default function Chatbot() {
       {open && (
         <Card className="fixed bottom-24 right-6 z-50 w-80 flex flex-col max-h-[450px]">
           <CardHeader className="flex flex-row justify-between items-center py-3">
-            <CardTitle className="text-base">Chatbot</CardTitle>
+            <CardTitle className="text-base">Chat with me</CardTitle>
             <Button variant="ghost" size="icon" onClick={() => setOpen(false)} className="text-xl">
               ×
             </Button>

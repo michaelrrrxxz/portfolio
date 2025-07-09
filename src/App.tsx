@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './pages/main';
-import NotFound from './pages/not-found';
-import Chatbot from './components/Chatbot';
+import NotFound from './components/page/not-found';
+import Chatbot from './components/func/Chatbot';
 import { Toaster } from 'sonner';
 
 function App() {

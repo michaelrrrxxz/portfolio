@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import Hero from './hero';
+import Hero from '../components/page/hero';
 // import About from './about';
-import Skills from './skills';
-import Stacks from './stacks';
-import Blog from './blog';
-import Contact from './contact';
-import Cos from './completed-projects';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Skills from '../components/page/skills';
+import Stacks from '../components/page/stacks';
+import Blog from '../components/page/blog';
+import Contact from '../components/page/contact';
+import Cos from '../components/page/completed-projects';
+import Navbar from '../components/core/Navbar';
+import Footer from '../components/core/Footer';
 
 export default function Main() {
 const [audio] = useState(() => new Audio('/audio/otlom.mp3'));
@@ -30,12 +30,16 @@ const [audio] = useState(() => new Audio('/audio/otlom.mp3'));
     };
 
     // Play audio on first click
-    const handleClick = () => {
-      audio.play().catch((err) => {
-        console.warn('Audio play failed:', err);
-      });
-      window.removeEventListener('click', handleClick);
-    };
+const handleClick = () => {
+  setTimeout(() => {
+    audio.play().catch((err) => {
+      console.warn('Audio play failed:', err);
+    });
+  }, 5000); // Delay of 5000 milliseconds (5 seconds)
+
+ 
+  window.removeEventListener('click', handleClick);
+};
 
     window.addEventListener('contextmenu', disableContextMenu);
     window.addEventListener('keydown', disableDevToolsShortcuts);

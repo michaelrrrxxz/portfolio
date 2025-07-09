@@ -12,7 +12,7 @@ import {
   Globe,
 } from "lucide-react";
 
-import Photo from "./../assets/image.png";
+import Photo from "@/assets/image.png";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
