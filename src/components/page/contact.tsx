@@ -16,7 +16,7 @@ export default function ContactSection() {
     const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_CAPTCHA;
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
@@ -145,7 +145,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </div>
               <ReCAPTCHA
         ref={recaptchaRef}
-        sitekey="6Lcman0rAAAAAHaQSSV1ts7gPsgEAMwCXzpO6fx9"
+      sitekey={RECAPTCHA_SITE_KEY}
         onChange={(token) => setCaptchaToken(token)}
       />
 
