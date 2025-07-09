@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import ReCAPTCHA from "react-google-recaptcha";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,18 +13,28 @@ import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function ContactSection() {
+    const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+ const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    if (!captchaToken) {
+      toast.error("Please complete the CAPTCHA.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    formData.append("g-recaptcha-response", captchaToken); // Add CAPTCHA token
 
     try {
       const response = await fetch("https://formspree.io/f/mblyedkw", {
@@ -37,6 +47,8 @@ export default function ContactSection() {
 
       if (response.ok) {
         form.reset();
+        recaptchaRef.current?.reset(); // Reset CAPTCHA
+        setCaptchaToken(null);
         toast.success("Message sent! I’ll get back to you shortly.");
       } else {
         toast.error("Failed to submit. Please try again.");
@@ -131,6 +143,11 @@ export default function ContactSection() {
                   className="rounded-sm border-black focus-visible:ring-black"
                 />
               </div>
+              <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey="6Lcman0rAAAAAHaQSSV1ts7gPsgEAMwCXzpO6fx9"
+        onChange={(token) => setCaptchaToken(token)}
+      />
 
               <Button
                 type="submit"
