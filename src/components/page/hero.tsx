@@ -37,9 +37,9 @@ export default function Hero() {
 
     const fetchQuote = async () => {
       try {
-        const res = await fetch("https://zenquotes.io/api/random");
+        const res = await fetch("https://zenquotes.io/api/today");
         const data = await res.json();
-        // data is an array: [{ q: "...", a: "..." }]
+  
         setQuote({ content: data[0].q, author: data[0].a });
       } catch (error) {
         console.error("Failed to fetch quote:", error);
