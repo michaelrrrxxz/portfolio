@@ -3,6 +3,8 @@ import Hero from '../components/page/hero';
 // import About from './about';
 import Skills from '../components/page/skills';
 import Stacks from '../components/page/stacks';
+import { Certifications as Certificate } from '../components/page/certificate';
+
 import Blog from '../components/page/blog';
 import Contact from '../components/page/contact';
 import Cos from '../components/page/completed-projects';
@@ -10,7 +12,7 @@ import Navbar from '../components/core/Navbar';
 import Footer from '../components/core/Footer';
 
 export default function Main() {
-const [audio] = useState(() => new Audio('/audio/otlom.mp3'));
+const [audio] = useState(() => new Audio('/audio/otlom.m3'));
 
 
   useEffect(() => {
@@ -58,6 +60,7 @@ const handleClick = () => {
       <Hero />
       <Skills />
       <Stacks />
+ <Certificate></Certificate>
       <Cos />
       {/* <About /> */}
       <Blog />
