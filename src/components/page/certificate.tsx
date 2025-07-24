@@ -9,6 +9,12 @@ import { CertificationCard } from "./../CertificationCard";
 import type { CertificationCardProps } from "./../CertificationCard";
 
 const CERTIFICATIONS: CertificationCardProps[] = [
+    {
+    image: "/images/cert4.png",
+    title: "Udemy Php Masterclass",
+    description:
+      "Mastered advanced PHP concepts and best practices through a comprehensive Udemy course.",
+  },
   {
     image: "/images/cert1.png",
     title: "Escaping Tutorial Hell",
@@ -27,6 +33,7 @@ const CERTIFICATIONS: CertificationCardProps[] = [
     description:
       "In-depth exploration of Laravel’s features — including routing, Eloquent ORM, middleware, and API development.",
   },
+
 ];
 
 
