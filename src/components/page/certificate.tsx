@@ -10,25 +10,30 @@ import type { CertificationCardProps } from "./../CertificationCard";
 
 const CERTIFICATIONS: CertificationCardProps[] = [
   {
-    image: "/images/cert4.png",
+    image: "/images/certs/cert4.png",
     title: "Udemy Php Masterclass",
     description:
       "Mastered advanced PHP concepts and best practices through a comprehensive Udemy course.",
   },
   {
-    image: "/images/cert1.png",
+    description:"Cursor Vibe Codinf Pro: Bulding any App from Scratch using AI",
+    image: "/images/certs/cert5.png",
+    title: "Cursor Vibe Coding Pro",
+  },
+  {
+    image: "/images/certs/cert1.png",
     title: "Escaping Tutorial Hell",
     description:
       "Completed a course on breaking free from passive learning cycles and building real-world projects with confidence.",
   },
   {
-    image: "/images/cert2.png",
+    image: "/images/certs/cert2.png",
     title: "Choosing Methodologies, Tools, and Techniques",
     description:
       "Certified in evaluating and selecting the right development workflows, tools, and best practices tailored to project needs.",
   },
   {
-    image: "/images/cert3.png",
+    image: "/images/certs/cert3.png",
     title: "Exploring the Power of the Laravel Framework",
     description:
       "In-depth exploration of Laravel’s features — including routing, Eloquent ORM, middleware, and API development.",
