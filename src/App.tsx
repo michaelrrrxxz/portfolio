@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './pages/main';
 import NotFound from './components/page/not-found';
-// import Chatbot from './components/func/Chatbot';
+import Chatbot from './components/func/Chatbot';
 import { Toaster } from 'sonner';
 import { Loader2 } from "lucide-react"; // Spinner icon from lucide-react
 
@@ -23,7 +23,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
 
-        {/* <Chatbot /> */}
+        <Chatbot />
 
         <Toaster
           position="bottom-right"

@@ -3,8 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Make sure this is EXACTLY as shown -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <title>MichaelAngelo.dev</title>
+
+    <!-- ✅ Optional: force box-sizing and prevent horizontal scroll -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+
     <link href="/src/App.css" rel="stylesheet">
     <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon">
   </head>
