@@ -10,6 +10,12 @@ import type { CertificationCardProps } from "./../CertificationCard";
 
 const CERTIFICATIONS: CertificationCardProps[] = [
   {
+    image: "/images/certs/cert6.png",
+   title: "React Crash Course: From Zero to Hero",
+    description:
+      "Completed a comprehensive React course covering hooks, state management, and component architecture.",
+  },
+  {
     image: "/images/certs/cert4.png",
     title: "Udemy Php Masterclass",
     description:

@@ -12,7 +12,7 @@ import {
   Globe,
 } from "lucide-react";
 
-import Photo from "@/assets/image.png";
+// import Photo from "@/assets/image.png";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -145,11 +145,11 @@ export default function Hero() {
 
         {/* Right Side Image + Quote */}
         <div className="flex flex-col items-center text-center" data-aos="fade-left">
-          <img
+          {/* <img
             src={Photo}
             alt="Profile"
             className="rounded-xl object-cover w-[400px] h-[400px] border border-black bg-white shadow-md mb-4"
-          />
+          /> */}
           {quote && (
             <div className="max-w-xs text-sm text-gray-600 italic">
               “{quote.content}”

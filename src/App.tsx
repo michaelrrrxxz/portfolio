@@ -1,34 +1,45 @@
+import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './pages/main';
 import NotFound from './components/page/not-found';
-import Chatbot from './components/func/Chatbot';
+// import Chatbot from './components/func/Chatbot';
 import { Toaster } from 'sonner';
+import { Loader2 } from "lucide-react"; // Spinner icon from lucide-react
+
+function Loading() {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <Loader2 className="h-10 w-10 animate-spin text-black" />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <Suspense fallback={<Loading />}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
-      <Chatbot />
+        {/* <Chatbot /> */}
 
-      {/* Sonner Toaster Configured */}
-      <Toaster
-        position="bottom-right"
-        theme="light" // "light" makes it black on white by default
-        closeButton
-        toastOptions={{
-          style: {
-            background: "#fff",
-            color: "#000",
-            border: "1px solid #000",
-            fontSize: "14px",
-          },
-        }}
-      />
-    </BrowserRouter>
+        <Toaster
+          position="bottom-right"
+          theme="light"
+          closeButton
+          toastOptions={{
+            style: {
+              background: "#fff",
+              color: "#000",
+              border: "1px solid #000",
+              fontSize: "14px",
+            },
+          }}
+        />
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
