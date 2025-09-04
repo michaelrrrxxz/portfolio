@@ -61,7 +61,7 @@ const handleClick = () => {
       <Skills />
       <Stacks />
  <Certificate></Certificate>
-      <Cos />
+     {/* <Cos /> */}
       {/* <About /> */}
       <Blog />
       <Contact />
