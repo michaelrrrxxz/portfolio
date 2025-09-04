@@ -7,7 +7,6 @@ import { Certifications as Certificate } from '../components/page/certificate';
 
 import Blog from '../components/page/blog';
 import Contact from '../components/page/contact';
-import Cos from '../components/page/completed-projects';
 import Navbar from '../components/core/Navbar';
 import Footer from '../components/core/Footer';
 
