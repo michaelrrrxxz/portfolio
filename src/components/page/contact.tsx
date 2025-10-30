@@ -79,7 +79,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </li>
               <li className="flex items-start space-x-4">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">+63 sample</span>
+                <span className="text-sm">+63 9930392836</span>
               </li>
               <li className="flex items-start space-x-4">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />

@@ -4,22 +4,22 @@ import { Card, CardContent } from "@/components/ui/card";
 const stats = [
   {
     label: "Completed Projects",
-    value: 42,
+    value: 5,
     icon: Briefcase,
   },
   {
     label: "Happy Clients",
-    value: 18,
+    value: 5,
     icon: Smile,
   },
   {
     label: "Years Experience",
-    value: 3,
+    value: 2,
     icon: CalendarCheck,
   },
   {
     label: "Clients Served",
-    value: 20,
+    value: 5,
     icon: Users,
   },
 ];
