@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './pages/main';
 import NotFound from './components/page/not-found';
 import Chatbot from './components/func/Chatbot';
+import Documents from './components/page/documents';
 import { Toaster } from 'sonner';
 import { Loader2 } from "lucide-react"; // Spinner icon from lucide-react
 
@@ -20,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/documents" element={<Documents />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
