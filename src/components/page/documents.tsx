@@ -62,29 +62,52 @@ export default function Documents() {
   // -------------------------
   // DOCUMENTS LIST
   // -------------------------
-  const documents = [
-    {
-      label: "PhilHealth",
-      value: "05-250650431-7",
-      icon: ShieldCheck,
-    },
-    {
-      label: "SSS",
-      value: "35-4125484-6",
-      icon: FileText,
-    },
-    {
-      label: "Pag-IBIG",
-      value: "121375954372",
-      icon: FolderOpen,
-    },
-    {
-      label: "Download My ID PDF",
-      value: "docs.pdf",
-      icon: FileArchive,
-      isPdf: true,
-    },
-  ];
+const documents = [
+  {
+    label: "Tax Identification Number",
+    value: "690-505-349",
+    icon: FileText,
+  },
+  {
+    label: "Driver's License",
+    value: "B12-24-000553",
+    icon: FolderOpen,
+  },
+  {
+    label: "National ID",
+    value: "3492-3719-3894-2732",
+    icon: ShieldCheck,
+  },
+  {
+    label: "PhilHealth",
+    value: "05-250650431-7",
+    icon: ShieldCheck,
+  },
+  {
+    label: "SSS",
+    value: "35-4125484-6",
+    icon: FileText,
+  },
+  {
+    label: "Pag-IBIG",
+    value: "121375954372",
+    icon: FolderOpen,
+  },
+  // Files / PDFs
+  {
+    label: "Download My ID PDF",
+    value: "docs.pdf",
+    icon: FileArchive,
+    isPdf: true,
+  },
+  {
+    label: "TIN PDF",
+    value: "tin.pdf",
+    icon: FileArchive,
+    isPdf: true,
+  },
+];
+
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 py-16 bg-white">
