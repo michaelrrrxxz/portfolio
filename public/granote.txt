@@ -1,0 +1,69 @@
+
+Customer called in reported that the internet has been down since (time). Please reach out to the customer as soon as possible.
+
+Customer called in reported that the internet speed is slow. Please reach out to the customer as soon as possible.
+
+Customer called in reported that the internet connection has an intermittent signal. Please reach out to the customer as soon as possible.
+
+Customer called in reported no internet connection at all. Please reach out to the customer as soon as possible.
+
+Customer called in reported frequent disconnection issues. Please reach out to the customer as soon as possible.
+
+Customer called in reported that the modem/router is not powering on. Please reach out to the customer as soon as possible.
+
+Customer called in reported that the Wi-Fi signal is weak in certain areas of the house. Please reach out to the customer as soon as possible.
+
+Customer called in reported packet loss and an unstable connection. Please reach out to the customer as soon as possible.
+
+
+Customer called in reported that TN: (put TN here) cannot make outgoing calls. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) cannot receive incoming calls. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) cannot make or receive calls. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) has one-way calling issues. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) has call drops during active calls. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) has poor call quality or static. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) is showing NDT (No Dial Tone). Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) has delayed dial tone. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) cannot dial specific numbers. Please reach out to the customer as soon as possible.
+
+Customer called in reported that TN: (put TN here) cannot call emergency numbers. Please reach out to the customer as soon as possible.
+
+Customer called in asking for the recent update of the ticket
+
+Customer called in asking for the most recent update on the ticket. Please provide an update as soon as possible.
+
+Customer called in requesting a status update on the existing ticket. Please reach out to the customer as soon as possible.
+
+Customer called in following up on the ticket progress. Please contact the customer with the latest update.
+
+Customer called in inquiring about the resolution timeline of the ticket. Please reach out to the customer as soon as possible.
+
+Customer called in requesting confirmation if the ticket is still being worked on. Please provide an update.
+
+Customer called in asking for an update on the escalation status of the ticket. Please reach out to the customer as soon as possible.
+
+
+Customer called in requesting an update on the ticket; however, there is currently no update available. Please follow up with the ticket owner and reach out to the customer as soon as possible.
+
+Customer called in for a ticket update, but no progress has been posted yet. Please coordinate with the ticket owner and update the customer accordingly.
+
+Customer called in asking for the latest update on the ticket; no update is reflected at this time. Please follow up internally and reach out to the customer as soon as possible.
+
+Customer called in following up on the ticket. There is no update available as of now. Please ping the ticket owner and update the customer.
+
+Just a quick recap: you called in and reported that the (issue) is down at the verified service address, (address). I have successfully created a ticket, and this will be handled by the appropriate team.
+
+I apologize for the inconvenience. There is currently no update on your ticket, but I will immediately follow up with the appropriate team and ensure the ticket is being prioritized.
+
+
+I apologize for the inconvenience. There is no update on your ticket at this time, but I will follow up on this and provide an update as soon as possible.
+
+
