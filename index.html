@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
-    <!-- ✅ Make sure this is EXACTLY as shown -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>MichaelAngelo.dev</title>
-
-    <!-- ✅ Optional: force box-sizing and prevent horizontal scroll -->
     <style>
       * {
         box-sizing: border-box;
@@ -28,6 +25,17 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+    const originalTitle = document.title;
+    const newTitle = "1 New Message 👀";
+
+    let toggle = false;
+
+    setInterval(() => {
+      document.title = toggle ? originalTitle : newTitle;
+      toggle = !toggle;
+    }, 20000); 
+  </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
